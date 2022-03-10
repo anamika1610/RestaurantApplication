@@ -1,0 +1,102 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container fluid">
+    <h2> Restaurant record app</h2>
+    <div class="d-flex">
+      <button (click)="onAddResto()" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Add
+        Restaurant
+      </button>
+      <button routerLink="/Login" type="button" class="btn btn-danger mx-3">
+        Log Out
+      </button>
+    </div>
+  </div>
+</nav>
+<!--jumbotron from bootstrap-->
+<div class="jumbotron jumbotron-fluid p-5 mt-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-6 fw-bold">Restaurant Record Management</h1>
+    <p class="col md-8 fs-4">You can save records here.</p>
+    <a class="btn btn-primary btn-sm" target="_blank" href="https://www.linkedin.com/in/anamika-sarkar-696272168/">My
+      Profile
+    </a>
+  </div>
+</div>
+<!--jumbotron closed-->
+<!--table strts here-->
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Id Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Address</th>
+      <th scope="col">Services</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of allRestaurantData">
+      <td>{{data.id}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.mobile}}</td>
+      <td>{{data.address}}</td>
+      <td>{{data.services}}</td>
+      <td>
+        <button (click)="onEditResto(data)" type="button" class="btn btn-info" data-toggle="modal"
+          data-target="#exampleModal">Edit</button> &nbsp;
+        <button (click)="deleteResto(data)" type="button" class="btn btn-danger ">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Restaurant Record form </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp"
+              placeholder="Name ">
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input type="text" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp"
+              placeholder="Restaurant Address">
+          </div>
+          <div>
+            <label for="Mobile">Mobile Number</label>
+            <input type="text" formControlName="mobile" class="form-control" id="Mobile" aria-describedby="emailHelp"
+              placeholder="Restaurant Mobile Number">
+          </div>
+          <div>
+            <label for="Address">Address</label>
+            <input type="text" class="form-control" formControlName="address" id="Address" aria-describedby="emailHelp"
+              placeholder="Restaurant Address">
+          </div>
+          <div>
+            <label for="Services">Services</label>
+            <input type="text" class="form-control" formControlName="services" id="Services"
+              aria-describedby="emailHelp" placeholder="Restaurant Services as Tea and Frappe ">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Clear</button>
+        <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addResto()">Add details</button>
+        <button *ngIf="showBtn" type="button" class="btn btn-primary" (click)="UpdateResto()">Update details</button>
+
+      </div>
+    </div>
+  </div>
+</div>

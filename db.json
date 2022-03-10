@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "name": "Tenant_ABC",
+      "address": "12 add ring road ",
+      "email": "tenant@gmail.com",
+      "mobile": "147147",
+      "services": "mint tea"
+    },
+    {
+      "id": 3,
+      "name": "Test",
+      "address": "new address",
+      "email": "test@gmail.com",
+      "mobile": "121212",
+      "services": "chai"
+    },
+    {
+      "id": 4,
+      "name": "ABC",
+      "address": "add 2 mumbai",
+      "email": "abc@gmail.com",
+      "mobile": "789789",
+      "services": "tea"
+    }
+  ],
+  "signup": [
+    {
+      "name": "anamika sarkar",
+      "mobile": 7415727677,
+      "email": "anamikasarkar97ss@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "name": "anamika sarkar",
+      "mobile": 7415727677,
+      "email": "anamikasarkar97ss@gmail.com",
+      "password": "123456",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
