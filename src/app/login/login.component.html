@@ -7,7 +7,7 @@
                     <h5>Feel free to login </h5>
                     <hr>
                 </div>
-                <form [FormGroup]="loginForm" (ngSubmit)="Login()">
+                <form [formGroup]="loginForm" (ngSubmit)="Login()">
                     <div class="mb-3">
                         <label>Email address</label>
                         <input formControlName="email" type="email" class="form-control" id="email"
